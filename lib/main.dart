@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter16firebase2/screens/loginpage.dart';
+import 'package:flutter16firebase2/screens/realtime_database/realtimedbsample.dart';
 
-void main () async{
-
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LoginPage(),
+      home: RealTimeDbSample(),
     );
   }
 }
