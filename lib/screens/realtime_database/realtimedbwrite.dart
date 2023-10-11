@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class RealTimeDbSample extends StatefulWidget {
-  const RealTimeDbSample({super.key});
+class RealTimeDbWrite extends StatefulWidget {
+  const RealTimeDbWrite({super.key});
 
   @override
-  State<RealTimeDbSample> createState() => _RealTimeDbSampleState();
+  State<RealTimeDbWrite> createState() => _RealTimeDbWriteState();
 }
 
-class _RealTimeDbSampleState extends State<RealTimeDbSample> {
+class _RealTimeDbWriteState extends State<RealTimeDbWrite> {
   final _form = GlobalKey<FormState>();
   String? title, note;
   void writeData() async {
@@ -63,7 +63,8 @@ class _RealTimeDbSampleState extends State<RealTimeDbSample> {
                 child: ElevatedButton(
                     onPressed: () {
                       writeData();
-                    }, child: const Text("Submit")),
+                    },
+                    child: const Text("Submit")),
               )
             ],
           )),
