@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter16firebase2/screens/profilepage.dart';
 
+import '../authentication/google_signin_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -27,9 +29,17 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 50),
                   OutlinedButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ProfilePage(),
-                        ));
+                        signInWithGoogle().then((result) {
+                          if (result != null) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ProfilePage();
+                                },
+                              ),
+                            );
+                          }
+                        });
                       },
                       child: Row(
                         children: [

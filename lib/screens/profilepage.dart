@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../authentication/google_signin_page.dart';
+import 'loginpage.dart';
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -19,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
           DrawerHeader(
               child: CircleAvatar(
             backgroundImage: NetworkImage(
-              'https://picsum.photos/250?image=9',
+              imageUrl!,
             ),
             radius: 100,
             backgroundColor: Colors.transparent,
@@ -31,13 +34,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
             ),
             subtitle: Text(
-              "name!",
+              name!,
               style: TextStyle(color: Colors.deepPurple),
             ),
           ),
           ListTile(
             subtitle: Text(
-              "email!",
+              email!,
               style: TextStyle(
                 color: Colors.deepPurple,
               ),
@@ -56,7 +59,11 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           ListTile(
             onTap: () {
-
+              signOutGoogle();
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) {
+                return LoginPage();
+              }), ModalRoute.withName('/'));
             },
             title: Text(
               'Sign Out',
