@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter16firebase2/screens/loginpage.dart';
 import 'package:flutter16firebase2/screens/realtime_database/realtimedbread.dart';
 import 'package:flutter16firebase2/screens/realtime_database/realtimedbwrite.dart';
+import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: RealtimeDbRead(),
+      home: AddUser(),
     );
   }
 }
