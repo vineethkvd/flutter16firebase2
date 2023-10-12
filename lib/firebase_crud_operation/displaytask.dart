@@ -57,12 +57,12 @@ class _DisplayTaskState extends State<DisplayTask> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(
-                                    onPressed: null, icon: Icon(Icons.edit)),
+                                    onPressed: null, icon: Icon(color: Colors.teal,Icons.edit)),
                                 IconButton(
                                     onPressed: () {
                                       deleteTask(taskSnap.id);
                                     },
-                                    icon: Icon(Icons.delete))
+                                    icon: Icon(color: Colors.red,Icons.delete))
                               ],
                             )
                           ],

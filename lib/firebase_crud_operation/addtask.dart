@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AddTask extends StatefulWidget {
@@ -8,6 +9,18 @@ class AddTask extends StatefulWidget {
 }
 
 class _AddTaskState extends State<AddTask> {
+  final contentController = TextEditingController();
+  final timestampController = TextEditingController();
+  final CollectionReference task =
+      FirebaseFirestore.instance.collection('tasks');
+  addTask() {
+    final data = {
+      'content': contentController.text,
+      'timestamp': timestampController.text,
+    };
+    task.add(data);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,21 +32,28 @@ class _AddTaskState extends State<AddTask> {
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            decoration: InputDecoration(label: Text("Content")),
+          child: TextField(
+            controller: contentController,
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), label: Text("Content")),
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
+          child: TextField(
+            controller: timestampController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(label: Text("Timestamp")),
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), label: Text("Timestamp")),
           ),
         ),
         ElevatedButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(Colors.teal)),
-            onPressed: null,
+            onPressed: () {
+              addTask();
+              Navigator.pop(context);
+            },
             child: Text(
               "Submit",
               style: TextStyle(color: Colors.white),
