@@ -12,6 +12,10 @@ class DisplayTask extends StatefulWidget {
 class _DisplayTaskState extends State<DisplayTask> {
   final CollectionReference task =
       FirebaseFirestore.instance.collection('tasks');
+  deleteTask(docId) {
+    task.doc(docId).delete();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +59,10 @@ class _DisplayTaskState extends State<DisplayTask> {
                                 IconButton(
                                     onPressed: null, icon: Icon(Icons.edit)),
                                 IconButton(
-                                    onPressed: null, icon: Icon(Icons.delete))
+                                    onPressed: () {
+                                      deleteTask(taskSnap.id);
+                                    },
+                                    icon: Icon(Icons.delete))
                               ],
                             )
                           ],
