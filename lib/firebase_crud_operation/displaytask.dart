@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter16firebase2/firebase_crud_operation/addtask.dart';
-import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
 
 class DisplayTask extends StatefulWidget {
   const DisplayTask({super.key});
