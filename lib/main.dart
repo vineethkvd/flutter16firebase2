@@ -8,7 +8,9 @@ import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
 import 'firebase_crud_operation/displaytask.dart';
 
 void main() async {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
