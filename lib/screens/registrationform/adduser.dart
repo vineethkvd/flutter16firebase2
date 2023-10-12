@@ -48,6 +48,7 @@ class _AddUserState extends State<AddUser> {
       extractedData.forEach((blogId, blogData) {
         namelist.add(blogData["name"]);
         emaillist.add(blogData["email"]);
+        phonellist.add(blogData["phone"]);
       });
       setState(() {
         isLoading = false;
