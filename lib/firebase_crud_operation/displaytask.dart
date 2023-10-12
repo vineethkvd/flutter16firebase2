@@ -40,10 +40,27 @@ class _DisplayTaskState extends State<DisplayTask> {
                   itemBuilder: (context, index) {
                     final DocumentSnapshot taskSnap =
                         snapshot.data!.docs[index];
-                    return Card(
-                      child: ListTile(
-                          title: Text('${taskSnap['content']}'),
-                          leading: Text('${taskSnap['timestamp']}')),
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        color: Colors.yellow[200],
+                        child: Column(
+                          children: [
+                            ListTile(
+                                title: Text('${taskSnap['content']}'),
+                                subtitle: Text('${taskSnap['timestamp']}')),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                    onPressed: null, icon: Icon(Icons.edit)),
+                                IconButton(
+                                    onPressed: null, icon: Icon(Icons.delete))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
                     );
                   });
             }
