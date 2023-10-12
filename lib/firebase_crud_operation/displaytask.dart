@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter16firebase2/firebase_crud_operation/addtask.dart';
+import 'package:flutter16firebase2/firebase_crud_operation/updatetask.dart';
 
 class DisplayTask extends StatefulWidget {
   const DisplayTask({super.key});
@@ -57,7 +58,21 @@ class _DisplayTaskState extends State<DisplayTask> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(
-                                    onPressed: null, icon: Icon(color: Colors.teal,Icons.edit)),
+                                    onPressed:() {
+                                      Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) {
+                                          return UpdateTask(
+                                            content: taskSnap['content'],
+                                            timestamp: taskSnap['timestamp'].toString(),
+                                            id: taskSnap.id,
+                                          );
+                                        },
+                                      ));
+
+
+
+
+                                    }, icon: Icon(color: Colors.teal,Icons.edit)),
                                 IconButton(
                                     onPressed: () {
                                       deleteTask(taskSnap.id);
