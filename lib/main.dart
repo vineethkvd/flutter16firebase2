@@ -8,8 +8,6 @@ import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
 import 'firebase_crud_operation/displaytask.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
   runApp(const MyApp());
 }
 
