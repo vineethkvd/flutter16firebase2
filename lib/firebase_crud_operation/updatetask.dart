@@ -6,7 +6,11 @@ class UpdateTask extends StatefulWidget {
   final String timestamp;
   final String id;
 
-  UpdateTask({Key? key, required this.content, required this.timestamp, required this.id})
+  UpdateTask(
+      {Key? key,
+      required this.content,
+      required this.timestamp,
+      required this.id})
       : super(key: key);
 
   @override
@@ -16,7 +20,8 @@ class UpdateTask extends StatefulWidget {
 class _UpdateTaskState extends State<UpdateTask> {
   final updateContentController = TextEditingController();
   final updateTimestampController = TextEditingController();
-  final CollectionReference task = FirebaseFirestore.instance.collection('tasks');
+  final CollectionReference task =
+      FirebaseFirestore.instance.collection('tasks');
 
   @override
   void initState() {

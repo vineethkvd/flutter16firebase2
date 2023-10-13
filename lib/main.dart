@@ -5,6 +5,7 @@ import 'package:flutter16firebase2/screens/realtime_database/realtimedbread.dart
 import 'package:flutter16firebase2/screens/realtime_database/realtimedbwrite.dart';
 import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
 
+import 'fileupload/fileuploadsample.dart';
 import 'firebase_crud_operation/displaytask.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: DisplayTask(),
+      home: FileUploadSample(),
     );
   }
 }
