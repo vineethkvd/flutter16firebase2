@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter16firebase2/permission_handler/permission_handler.dart';
 import 'package:flutter16firebase2/screens/loginpage.dart';
 import 'package:flutter16firebase2/screens/realtime_database/realtimedbread.dart';
 import 'package:flutter16firebase2/screens/realtime_database/realtimedbwrite.dart';
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: FileUploadSample(),
+      home: PermissionHandler(),
     );
   }
 }
