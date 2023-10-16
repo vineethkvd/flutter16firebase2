@@ -42,7 +42,12 @@ class _PermissionHandlerState extends State<PermissionHandler> {
       print(e.toString());
     }
   }
-
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getFromGallery();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
