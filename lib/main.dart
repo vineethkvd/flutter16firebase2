@@ -1,18 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter16firebase2/permission_handler/permission_handler.dart';
-import 'package:flutter16firebase2/screens/loginpage.dart';
-import 'package:flutter16firebase2/screens/realtime_database/realtimedbread.dart';
-import 'package:flutter16firebase2/screens/realtime_database/realtimedbwrite.dart';
-import 'package:flutter16firebase2/screens/registrationform/adduser.dart';
+import 'package:flutter/material.dart';
 
-import 'fileupload/fileuploadsample.dart';
-import 'firebase_crud_operation/displaytask.dart';
+import 'email_password_login/home.dart';
+import 'email_password_login/login.dart';
+import 'image_upload/permission_handler.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -25,7 +23,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: PermissionHandler(),
     );
   }
