@@ -46,7 +46,7 @@ class _PermissionHandlerState extends State<PermissionHandler> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _getFromGallery();
+    // _getFromGallery();
   }
   @override
   Widget build(BuildContext context) {
