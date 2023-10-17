@@ -28,7 +28,7 @@ class _PermissionHandlerState extends State<PermissionHandler> {
           // You can use the 'imageFile' here for further processing or display.
           UploadTask uploadTask = _firebaseStorage
               .ref()
-              .child('images/${DateTime.now()}.jpg')
+              .child('images/image${DateTime.now()}.jpg')
               .putFile(imageFile);
 
           TaskSnapshot snapshot = await uploadTask.whenComplete(() => {});
